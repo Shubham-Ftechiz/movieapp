@@ -1,0 +1,735 @@
+.mainDashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    //height: calc(100vh - 1px);
+
+    // Left panel
+    .options{
+        border: 1px solid #FFFFFF;
+        width: auto;
+        border-radius: 40px 10px 10px 40px;
+        background-color: #FFFFFF;
+        padding: 0 2rem;
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+       
+
+        #iconStandard{
+            padding-left: 0px;
+        }
+
+        #iconSicon{
+            margin-top: 50px;
+
+            .selecticonSIcon{
+                    padding: 13px 10px 6px 10px;
+                    border-radius: 4px;
+                    border: 1px solid #303030;
+                    background-color: #303030;
+                    cursor: pointer;
+                    cursor: pointer;
+                    img{
+                        background-color: white;
+                        // border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+
+            .selecticonSIconNoBorder{
+                cursor: pointer;
+            }
+            
+        }
+        
+        .subIcon{
+            // margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap:3rem;
+            /* padding-left: 6px; */
+
+            #iconCalender{
+                .selecticonCalender{
+
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    border: 1px solid #303030;
+                    background-color: #303030;
+                    cursor: pointer;
+                    cursor: pointer;
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+
+                .selecticonCalenderNoBorder{
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    /* border: 1px solid #303030; */
+                    //border-radius: 10px;
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+            }
+            #iconMessage{
+                .selecticonIconMessage{
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    border: 1px solid #303030;
+                    background-color: #303030;
+                    cursor: pointer;
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+
+                .selecticonIconMessageNoBorder{
+                   
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    /* border: 1px solid #303030; */
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+            }
+            #iconClock{
+                .selecticonIconClock{
+                   
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    border: 1px solid #303030;
+                    background-color: #303030;
+                    cursor: pointer;
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+                .selecticonIconClockNoBorder{
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    /* border: 1px solid #303030; */
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+            }
+            #iconSettings{
+                .selecticonIconSettings{
+                   
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    border: 1px solid #303030;
+                    background-color: #303030;
+                    cursor: pointer;
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+                .selecticonIconSettingsNoBorder{
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    /* border: 1px solid #303030; */
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+            }
+            #iconLogout{
+                .selecticonIconLogout{
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    border: 1px solid #303030;
+                    cursor: pointer;
+                    background-color: #303030;
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+                .selecticonIconLogoutNoBorder{
+                    cursor: pointer;
+                    padding: 13px 9px 6px 9px;
+                    border-radius: 4px;
+                    /* border: 1px solid #303030; */
+                    img{
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Health Overview Cards
+
+    .healthOverviewMain{
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        margin-right: 1rem;
+      
+
+        .subhealthOverview{
+            flex: 1;
+
+            .healthOverviewtop{
+                display: flex;
+                flex-direction: row;
+
+                .healthHeading{
+                    font-size: 28px;
+                    font-weight: 700;
+                    line-height: 35.14px;
+                }
+                .serachbellIcon{
+                    flex: 1;
+                }
+            }
+            .dateCards{
+                margin-top: 15px;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 20.08px;
+            }
+            .mainCards {
+                display: flex;
+                justify-content: space-between;
+
+                .cards{
+                    width: 213px;
+                    height: 262px;
+                    margin-top: 20px;
+                    background-color: #FFFFFF;
+                    border: 2px solid #FFFFFF;
+                    border-radius: 10px;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .topIcon{
+                        display: flex;
+                        //justify-content: space-between;
+                    }
+
+                    .iconBackground{
+                        width: 29px;
+                        padding: 10px;
+                        border: 1px solid transparent;
+                        border-radius: 12px;
+                    }
+                    .testName{
+                        font-size: 16px;
+                        font-weight: 600;
+                        padding: 20px;
+                    }
+                    .measureName{
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                    .measureUnit{
+
+                    }
+                    .testResult{
+                        font-size: 12px;
+                        font-weight: 600;
+                        width: 40px;
+                        padding: 10px;
+                        border: 1px solid transparent;
+                        border-radius: 5px;
+                    }
+                }
+                
+            }
+        }
+
+        .activityGrowth{
+            flex: 1;
+            width: auto;
+            height: auto;
+            margin-top: 20px;
+            background-color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+
+            .activityGrowthTxt{
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .datePicker{
+                float: right;
+            }
+            .graph-chart{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+        }
+        .appointments{
+            flex: 1;
+            margin-top: 20px;
+            width: auto;
+            height: 50px;
+            margin-top: 20px;
+            background-color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            .upcomingAppointment{
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .appointmentDate{
+                font-size: 12px;
+                font-weight: 700;
+                border: 1px solid transparent;
+                background-color: #D0FBFF;
+                border-radius: 8px;
+                padding: 7px;
+            }
+            .appointmentName{
+                font-size:16px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    // BMI Calculator
+    .bmicalculatorMain{
+        flex: 1;
+        border: 1px solid #303030;
+        border-radius: 40px 10px 10px 40px;
+        background-color: #303030;
+        padding: 15px 30px;
+        height: auto;
+
+        .topBmiIndex {
+            display: flex;
+            justify-content: space-between;
+
+            .mainHeading{
+                font-size: 22px;
+                font-weight: 400;
+                color: #FFFFFF;
+            }
+        }
+
+        .heightWeightPicker{
+            display: flex;
+            margin-top: 20px;
+            justify-content: space-between;
+
+            .sidePickerMain{
+
+                height: 105px;
+                width: 200px;
+                border: 1px solid #4A4949;
+                border-radius: 5px;
+                background-color: #4A4949;
+                padding: 10px;
+                margin-left: 4px;
+
+                .sidePickerIcon{
+
+                    .sidePickerBmi{
+                        font-size: 16px;
+                        color: #FFFFFF;
+                    }
+
+                    .BMIHealth{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 20px;
+                        .BMIValue{
+                            color: #FFFFFF;
+                        }
+                        .healthyIcon{
+                            border: 1px solid #D6FFDD;
+                            border-radius: 5px;
+                            background-color: #D6FFDD;
+                            width: 40%;
+                            font-size: 12px;
+                            font-weight: 600;
+                            padding: 2px;
+                        }
+                    }
+                    .slider-picker{
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .slider-picker> div:nth-child(1) {
+                        width: 90%;
+                        border: 1px solid rgb(79, 9, 9);
+                        border-radius: 10px;
+                    }
+                    .slider-picker> div:nth-child(2) {
+                        visibility: hidden;
+                    }
+                    .slider-picker> div > div > div {
+                            border-radius: 10px;
+                    }
+
+                    .sliderMain{
+                        margin-top: 20px;
+                       
+                    }
+                }
+            }
+        }
+        
+        .bodyMeasurementMain{
+            display: flex;
+            
+            .bodyMeasurements{
+                color: #FFFFFF;
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                /* line-height: 35px; */
+
+                .subBodyMeasure {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 1rem;
+                    align-items: flex-start;
+                }
+
+                #bodyMeasurementHeading{
+                    font-size: 16px;
+                }
+                #checkStatus{
+                    font-size: 12px;
+                    color: #CACACA;
+
+                }
+                #bodyShape{
+                    font-size: 12px;
+                    color: #FFFFFF;
+                    background-color: #4A4949;
+                    width: auto;
+                    border: 1px solid #4A4949;
+                    padding: 5px;
+                    border-radius: 10px;
+                    /* height: 15vh; */
+                    text-align: center;
+                }
+                .cardsManage{
+                    margin-top: 20%;
+                    .bodyParts{
+                        height: auto;
+                        width: 5vw;
+                        padding: 10px 10px 15px 10px;
+                        border: 1px solid white;
+                        border-radius: 5px;
+                        background-color: #FFFFFF;
+                        margin-top: 10px;
+    
+                        .subBodyPart{
+                            font-size: 12px;
+                            color: #5F5F5F;
+                            font-weight: bold;
+                            text-align: center;
+                            padding-bottom: 1rem;
+                        }
+                        .partSizeIcon{
+                            display: flex;
+                            justify-content: space-evenly;
+                            margin-top: -10px;
+                            #partValue{
+                                font-size: 16px;
+                                color: #5F5F5F;
+                            }
+                            #partImg{
+    
+                            }
+                        }
+                    }
+                }
+            }
+            .bodyMeasurementsImg{
+                flex: 1;
+            }
+        }
+    }
+} 
+.hamburgerIcon {
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.hamburger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: grey;
+    margin: 4px 0;
+    color: #ffa41f;
+    display: none;
+}
+
+.subIcon {
+    display: none;
+}
+
+/* Display subIcon when showMenu is true */
+.subIcon.show-menu {
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 1345px) {
+    .bmicalculatorMain{
+        margin: 2rem 2.5rem 0 2rem;
+     }
+}
+
+/* Hide subIcon for screens with max-width: 996px */
+@media (max-width: 996px) {
+    .hamburger-bar {
+        display: block;
+    }
+    .subIcon.show-menu {
+        display: flex;
+        flex-direction: column;
+    }
+    .alignDrawer > div > .ant-drawer-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+    .alignDrawer > div > .ant-drawer-body > #iconSicon {
+                .selecticonSIcon{
+                    padding: 13px 10px 6px 10px;
+                    border-radius: 4px;
+                    border: 1px solid #303030;
+                    background-color: #303030;
+                    cursor: pointer;
+                    cursor: pointer;
+                    img{
+                        background-color: white;
+                        // border: 1px solid white;
+                        border-radius: 5px;
+                    }
+                }
+                .selecticonSIconNoBorder{
+                    cursor: pointer;
+                }
+    }
+
+    .alignDrawer > div > .ant-drawer-body > #iconCalender {
+        .selecticonCalender{
+
+            padding: 13px 9px 6px 9px;
+            border-radius: 4px;
+            border: 1px solid #303030;
+            background-color: #303030;
+            cursor: pointer;
+            cursor: pointer;
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+
+        .selecticonCalenderNoBorder{
+            padding: 13px 9px 6px 9px;
+            border-radius: 4px;
+            cursor: pointer;
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+        .mainDashboard {
+            .optionsDrawer{
+                border: 0px;
+                width: auto;
+                border-radius: 0px;
+                padding: 0px;
+                padding-top: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .alignDrawer > div > .ant-drawer-body > #iconMessage {
+        .selecticonIconMessage{
+            padding: 13px 9px 6px 9px;
+            border-radius: 4px;
+            border: 1px solid #303030;
+            background-color: #303030;
+            cursor: pointer;
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+
+        .selecticonIconMessageNoBorder{
+        
+            padding: 13px 9px 6px 9px;
+            border-radius: 4px;
+            cursor: pointer;
+            /* border: 1px solid #303030; */
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .alignDrawer > div > .ant-drawer-body > #iconClock {
+        .selecticonIconClock{
+                    
+            padding: 13px 9px 6px 9px;
+            border-radius: 4px;
+            border: 1px solid #303030;
+            background-color: #303030;
+            cursor: pointer;
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+        .selecticonIconClockNoBorder{
+            padding: 13px 9px 6px 9px;
+            border-radius: 4px;
+            cursor: pointer;
+            /* border: 1px solid #303030; */
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .alignDrawer > div > .ant-drawer-body > #iconSettings {
+    .selecticonIconSettings{
+                   
+        padding: 13px 9px 6px 9px;
+        border-radius: 4px;
+        border: 1px solid #303030;
+        background-color: #303030;
+        cursor: pointer;
+        img{
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+    }
+    .selecticonIconSettingsNoBorder{
+        padding: 13px 9px 6px 9px;
+        border-radius: 4px;
+        cursor: pointer;
+        /* border: 1px solid #303030; */
+        img{
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+    }
+    }
+    .alignDrawer > div > .ant-drawer-body > #iconLogout {
+        .selecticonIconLogout{
+            padding: 13px 9px 6px 9px;
+            border-radius: 4px;
+            border: 1px solid #303030;
+            cursor: pointer;
+            background-color: #303030;
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+        .selecticonIconLogoutNoBorder{
+            cursor: pointer;
+            padding: 13px 9px 6px 9px;
+            border-radius: 4px;
+            /* border: 1px solid #303030; */
+            img{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+        }
+    }
+    .optionsDrawer {
+        cursor: pointer;
+    }
+    .optionsDrawer > div > #hideIconStandard{
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 425px) {
+    .mainDashboard .bmicalculatorMain {
+        flex: 1 1;
+        border: 1px solid #303030;
+        border-radius: 40px 40px 40px 40px;
+        background-color: #303030;
+        padding: 40px 175px 40px 175px !important;
+        height: auto;
+    }
+
+    .subBodyPart{
+        font-size: 10px !important;
+    }
+    .mainDashboard .bmicalculatorMain .bodyMeasurementMain .bodyMeasurements .cardsManage .bodyParts .partSizeIcon #partValue {
+        font-size: 12px;
+        color: #5F5F5F;
+    }
+
+    div#partImg > img {
+        width: 12px !important;
+    }
+
+    .mainDashboard .bmicalculatorMain .bodyMeasurementMain .bodyMeasurements .cardsManage .bodyParts {
+        padding: 20px 25px 25px 25px;
+    }
+}

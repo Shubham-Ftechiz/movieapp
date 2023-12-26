@@ -1,0 +1,109 @@
+.bg-img {
+  position: relative;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-color: #093545;
+  height: 100vh;
+}
+
+.subLogin > div {
+    display: flex;
+    justify-content: center;
+}
+
+.mainLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .successLogin{
+        color: green;
+        margin-top: 50px;
+    }
+
+    .subLogin{
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        padding: 1.5rem 2rem;
+        position: absolute;
+        top:15%;
+        width: 300px;
+        height: 360px;
+        
+        .heading{
+            font-weight: 600 !important;
+            font-size: 50px;
+            text-align: center;
+            color: #FFFFFF !important;
+            font-family: Montserrat;
+        }
+        .ant-select-selection-placeholder {
+            color: #f0f0f0 !important;
+          }
+        .loginEmailText{
+            background-color: #224957 !important;
+            border-color: snow !important;
+            width: 300px;
+            height: 45px;
+            color: #FFFFFF;
+        }
+        .loginPassword{
+            background-color: #224957 !important;
+            border-color: snow !important;
+            width: 300px;
+            height: 45px;
+            color: #FFFFFF;
+        }
+
+        ::placeholder {
+            color: #FFFFFF;
+            opacity: 1; /* Firefox */
+          }
+          
+        ::-ms-input-placeholder { /* Edge 12 -18 */
+            color: #FFFFFF;
+          }
+       
+        h1{
+            margin:0;
+        }
+        p{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .login-form{
+            margin-top: 2rem;
+        }
+        .login-form-button {
+            width: 300px;
+            height: 54px;
+            background-color: #2BD17E;
+            box-shadow: none;
+            border-radius: 10px;
+
+            &:hover{
+                background-color: #2BD17E;
+            }
+        }
+        .registerlink{
+            margin-top: 10px;
+           #naviStyle{
+
+            &:hover{
+                color: blue;
+                cursor: pointer;
+                border-bottom:1px solid blue;
+            }
+           }
+        }
+    .alignCheckBox{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0px;
+    }
+    }
+
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.bg-img {
+  position: relative;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-color: #093545;
+  height: 100vh;
+}
+
+.row-padding{
+    padding-top: 30px
+}
+
+.heading {
+  font-family: "Rubik", sans-serif !important;
+  color: #5156be !important;
+  margin: 0;
+  font-weight: 400 !important;
+}
+
+.rest-form-font {
+  font-family: "IBM Plex Sans", sans-serif !important;
+}
+
+.card {
+  //margin: auto !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+  padding: 20px 0px 0px 0px !important;
+  margin-top: 20px
+}
+
+.card-div {
+  text-align: center !important;
+}
+
+.paragraph {
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+  color: #172b4c !important;
+  font-family: "IBM Plex Sans", sans-serif !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.term-link {
+  color: #ffa800 !important;
+  font-weight: bolder !important;
+}
+
+.signIn {
+  margin: auto !important;
+  display: block !important;
+  margin-top: 10px !important;
+}
+
+.already-text {
+  text-align: center !important;
+  margin-top: 10px !important;
+}
+
+.signInColor {
+  color: #ee3158 !important;
+}
+
+.ant-form-item .ant-form-item-explain-error
+{
+    color: #ff4d4f;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}

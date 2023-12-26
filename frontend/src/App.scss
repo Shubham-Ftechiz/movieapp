@@ -1,0 +1,15 @@
+.bg-imgcomm {
+  position: relative;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-color: #093545;
+  height: 100vh;
+
+  .bottomImage{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
