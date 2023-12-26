@@ -19,7 +19,10 @@ const App = () => {
   }
 
   useEffect(() => {
-    if (localStorage.getItem("token") && window.location.pathname == "/") {
+    if (localStorage.getItem("token") && window.location.pathname === "/") {
+      navigate("/dashboard");
+    }
+    else if (localStorage.getItem("token") && window.location.pathname === "/login") {
       navigate("/dashboard");
     }
     else if (!localStorage.getItem("token") && window.location.pathname === "/") {
@@ -28,7 +31,6 @@ const App = () => {
     else {
       setBaseRoutes(true);
     }
-    console.log("Check_respones:", window.location.pathname);
     
   }, []);
   return (
