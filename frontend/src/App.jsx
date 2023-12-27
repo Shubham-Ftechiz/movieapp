@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Dashboard from "./components/dashboard/dashboard";
+import CreateMovie from "./components/createmovie/createmovie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
 import PrivateRoutes from "./components/common/utils/privateRoutes";
@@ -20,10 +21,10 @@ const App = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token") && window.location.pathname === "/") {
-      navigate("/dashboard");
+      navigate(-1);
     }
     else if (localStorage.getItem("token") && window.location.pathname === "/login") {
-      navigate("/dashboard");
+      navigate(-1);
     }
     else if (!localStorage.getItem("token") && window.location.pathname === "/") {
       navigate("/login");
@@ -38,6 +39,7 @@ const App = () => {
       <Routes>
         <Route element={<PrivateRoutes />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/createmovie" element={<CreateMovie />} />
         </Route>
         <Route path="/login" element={<Login />} />
         {baseRoutes === true && (

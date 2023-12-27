@@ -4,8 +4,8 @@
     .wrapLogout {
         cursor: pointer;
         position: absolute;
-        left: 90%;
-        top: 15%;
+        left: 85%;
+        top: 8%;
         .clickableLogout{
             display: flex;
             justify-content: space-between;
@@ -21,7 +21,7 @@
     }
     .dashboardContent{
         text-align: center;
-        padding-top: 324px;
+        padding-top: 250px;
         display: flex;
         flex-direction: column;
         line-height: 2;

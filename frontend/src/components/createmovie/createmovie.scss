@@ -1,0 +1,107 @@
+.wrapLogout {
+    cursor: pointer;
+    position: absolute;
+    left: 85%;
+    top: 5%;
+    .clickableLogout{
+        display: flex;
+        position: absolute;
+    }
+    .logoutTxt {
+        color: #FFFFFF;
+        font-weight: 700;
+        font-size: 16px;
+        margin-top: 4px;
+        padding-right: 10px;
+    }
+}
+
+.mainCreateMovie {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 40%;
+
+  .createMovieTxt {
+    color: white;
+    font-size: 30px;
+    line-height: 56px;
+    font-weight: 600;
+  }
+  .createMovieContent {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    .avatar-uploader > div {
+      width: 400px !important;
+      height: 430px !important;
+      background-color: #224957 !important;
+    }
+    .uploadImage {
+      padding-right: 4rem;
+    }
+    .uploadImageField {
+      .upload-form {
+        .uploadTitleText {
+          background-color: #224957 !important;
+          border:none;
+          width: 362px;
+          height: 45px;
+          color: #ffffff !important;
+          font-size: 14px;
+          font-family: "Montserrat";
+        }
+        .publishedYear {
+          background-color: #224957 !important;
+          border:none;
+          width: 216px;
+          height: 45px;
+          color: #ffffff !important;
+          font-size: 14px;
+          font-family: "Montserrat";
+        }
+
+        ::placeholder {
+          color: #ffffff;
+          font-family: "Montserrat";
+          opacity: 1; /* Firefox */
+        }
+
+        ::-ms-input-placeholder {
+          /* Edge 12 -18 */
+          color: #ffffff;
+          font-family: "Montserrat";
+        }
+        .cancel-submit-form-button {
+          width: 179px;
+          height: 56px;
+          background-color: transparent;
+          box-shadow: none;
+          border: 1px solid #ffffff;
+          border-radius: 10px;
+          font-size: 16px;
+          font-weight: 700;
+          &:hover {
+            border: none;
+            background-color: #2bd17e;
+          }
+        }
+        #submitBtn{
+            margin-left: 20px;
+        }
+        .updateBtnHandle {
+          display: flex;
+          justify-content: space-between;
+          letter-spacing: 5px;
+        }
+
+        .publishedYearAlign{
+            margin-bottom: 40px;
+            line-height: 24px;
+        }
+      }
+    }
+  }
+}

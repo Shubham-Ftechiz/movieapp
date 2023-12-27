@@ -4,7 +4,6 @@ import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import logoutImage from "../../images/logout_icon.svg";
 
-
 const Dashboard = () => {
 
   const navigate = useNavigate();
@@ -13,6 +12,10 @@ const Dashboard = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
+
+  const createmovie = () => {
+    navigate("/createmovie");
+  }
 
   return (
     <div className="mainDashboard">
@@ -27,13 +30,13 @@ const Dashboard = () => {
         <div className="addMoviesBtn">
           <Button
               type="primary"
-              className="add-new-movie-button"
+            className="add-new-movie-button"
+            onClick={createmovie}
             >
               Add a new movie
             </Button>
         </div>
       </div>
-
     </div>
   );
 };
