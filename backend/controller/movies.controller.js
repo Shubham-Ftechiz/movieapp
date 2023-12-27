@@ -1,4 +1,5 @@
 const User = require("../model/User");
+const MoviesList = require("../model/MoviesList");
 
 const bcrypt = require("bcryptjs");
 
@@ -56,5 +57,46 @@ exports.login = async (req, res) => {
       res.send({
         message: "Email id is incorrect",
       });
+    });
+};
+
+exports.createMovie = async (req, res) => {
+  const r = req.body;
+
+  MoviesList.find({moviename: r.moviename})
+    .then((data)=>{
+      if(data.length > 0){
+        res.send({
+          message:"Movie already present"
+        })
+      }
+      else{
+        MoviesList.create(r)
+        .then((data) => {
+          res.send({
+            message: "Movie Created",
+          });
+        })
+        .catch((err) => {
+          res.send({
+            message: err.message,
+          });
+        });
+      }
+    })
+    .catch((err)=>{
+      res.send({
+        message: err.message,
+      });
+    })
+};
+
+exports.getMovie = async (req, res) => {
+  User.find()
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.send(err);
     });
 };

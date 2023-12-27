@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const loginRegister = require("./routes/loginRegister");
+const movieRoutes = require("./routes/movieRoutes")
 const connectDB = require("./config/connectDB");
 const dotenv = require("dotenv");
 
@@ -39,6 +40,7 @@ connectDB();
 
 // Routes
 loginRegister(app);
+movieRoutes(app);
 
 const PORT = process.env.PORT | 5000;
 
