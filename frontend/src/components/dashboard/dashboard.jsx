@@ -13,8 +13,13 @@ const Dashboard = () => {
     navigate("/login");
   };
 
-  const createmovie = () => {
-    navigate("/createmovie");
+  const createeditmovie = (selector) => {
+    if (selector === "addNewMovie") {
+      navigate("/createeditmovie",{state:{name:selector}});
+    }
+    else {
+      navigate("/createeditmovie",{state:{name:selector}}); 
+    }
   }
 
   return (
@@ -29,12 +34,18 @@ const Dashboard = () => {
         <div className="dashboardTxt">Your movie list is empty</div>
         <div className="addMoviesBtn">
           <Button
-              type="primary"
+            type="primary"
             className="add-new-movie-button"
-            onClick={createmovie}
+            onClick={()=> createeditmovie("addNewMovie")}
             >
               Add a new movie
-            </Button>
+          </Button>
+          <Button
+            type="primary"
+            className="edit-new-movie-button"
+            onClick={() => createeditmovie("editNewMovie")}>
+              Edit
+          </Button>
         </div>
       </div>
     </div>

@@ -37,6 +37,20 @@
                 background-color: #2BD17E;
             }
         }
+
+        .edit-new-movie-button{
+            width: 300px;
+            height: 54px;
+            background-color: #2BD17E;
+            box-shadow: none;
+            border-radius: 10px;
+            margin-left: 10px;
+    
+            &:hover{
+                background-color: #2BD17E;
+            }
+        }
+
         .dashboardTxt {
             font-size: 48px;
             font-weight: 600;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Dashboard from "./components/dashboard/dashboard";
-import CreateMovie from "./components/createmovie/createmovie";
+import CreateEditMovie from "./components/createmovie/createditemovie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
 import PrivateRoutes from "./components/common/utils/privateRoutes";
@@ -39,7 +39,7 @@ const App = () => {
       <Routes>
         <Route element={<PrivateRoutes />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/createmovie" element={<CreateMovie />} />
+          <Route path="/createeditmovie" element={<CreateEditMovie />} />
         </Route>
         <Route path="/login" element={<Login />} />
         {baseRoutes === true && (
