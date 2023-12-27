@@ -53,6 +53,10 @@ const CreateEditMovie = () => {
     navigate("/login");
   };
 
+  const cancelBtn = () => {
+    navigate("/dashboard");
+  }
+
   const uploadButton =
     location.state.name === "addNewMovie" ? (
       <div>
@@ -142,7 +146,8 @@ const CreateEditMovie = () => {
                 <Button
                   type="primary"
                   className="cancel-submit-form-button"
-                  id="cancelBtn">
+                  id="cancelBtn"
+                  onClick={cancelBtn}>
                   Cancel
                 </Button>
 
