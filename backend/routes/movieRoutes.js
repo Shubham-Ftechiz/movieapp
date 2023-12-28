@@ -8,7 +8,7 @@ const movieRoutes = (app) => {
   const router = require("express").Router();
 
   // Create Movie
-  router.post("/addmovie", movies.createMovie);
+  router.post("/createmovie", movies.createMovie);
 
   // Get Movie
   router.get("/getmovie", movies.getMovie);
