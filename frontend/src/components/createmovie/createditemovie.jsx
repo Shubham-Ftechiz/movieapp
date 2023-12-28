@@ -6,6 +6,8 @@ import "./createditemovie.scss";
 import uploadIcon from "../../images/downloadicon.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import logoutImage from "../../images/logout_icon.svg";
+import { ToastContainer, toast } from "react-toastify";
+
 
 const getBase64 = (img, callback) => {
   const reader = new FileReader();
@@ -27,8 +29,16 @@ const CreateEditMovie = () => {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
 
+  const [data, setData] = useState(null);
+
+
+  const [title, setTitle] = useState();
+  const [publishYear, setPublishYear] = useState();
+
   const navigate = useNavigate();
   const location = useLocation();
+
+  const token = localStorage.getItem("token");
 
   const handleChange = (info) => {
     if (info.file.status === "uploading") {
@@ -44,8 +54,46 @@ const CreateEditMovie = () => {
     }
   };
 
-  const onSubmit = (values) => {
-    console.log("Check_value:", values);
+  const onSubmit = async(values) => {
+    const payload = {
+      moviename:values.title,
+      publishedyear:values.publishedYear,
+      movieimage: "https://t.ly/IS-Yz"
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/api/createmovie', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json', // You may need to adjust the content type based on your API
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const result = await response.json();
+
+      toast.success(result.message, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        theme: "light",
+      });
+      
+      setData(result);
+      
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000)
+      
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   };
 
   const handleLogout = () => {
@@ -132,13 +180,14 @@ const CreateEditMovie = () => {
               }}
               onFinish={onSubmit}>
               <Form.Item name="title">
-                <Input className="uploadTitleText" placeholder="Title" />
+                <Input className="uploadTitleText" value={title} placeholder="Title" onChange={(e) => setTitle(e)}/>
               </Form.Item>
-              <Form.Item name="publishedYear" className="publishedYearAlign">
+              <Form.Item name="publishedYear" value={publishYear} className="publishedYearAlign">
                 <Input
                   className="publishedYear"
-                  type="text"
+                  type="number"
                   placeholder="Publishing year"
+                  onChange={(e) => setPublishYear(e)}
                 />
               </Form.Item>
 
@@ -173,6 +222,19 @@ const CreateEditMovie = () => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        limit={1}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+      />
     </>
   );
 };

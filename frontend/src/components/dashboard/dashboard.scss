@@ -6,8 +6,8 @@
 
     .wrapLogoutMovieList {
       cursor: pointer;
-      position: absolute;
-      left: 85%;
+    position: absolute;
+    left: 85%;
       /* top: 70%; */
       .clickableLogout {
         display: flex;
@@ -23,50 +23,42 @@
       }
     }
     .movieListCardsMain {
+      position: absolute;
+      top: 20vh;
+      display: flex;
+      flex-wrap: wrap;
+      left: 9.5vw;
+      justify-content: flex-start;
+
+      .movieListCards {
+        width: 250px;
+        height: 360px;
+        padding: 8px 8px 55px 8px;
+        line-height: 3vh;
+        border-radius: 12px;
+        background-color: #092c39;
+        margin-right: 4vw;
+        margin-top: 2vh;
         position: relative;
-        //border: 1px solid black;
-        width:  calc(100% - 2px);        ;
-        height: 80vh;
-        position: absolute;
-        top: 15vh;
-        display: flex;
-        flex-wrap: wrap;
 
-        .movieListCards{
-            position: absolute;
-            left: 10vw;
-            top: 5vh;
-            border: 1px solid 092C39;
-            background-color: #092C39;
-            border-radius: 12px;
-            width: 230px;
-            height: 360px;
-
-            .movieListImgTxt{
-                padding: 8px 8px 16px 8px;
-                position: relative;
-
-                #alignMovieImage{
-                    width: 215px;
-                    position: absolute;
-                    height: 45vh;
-                }
-                .movienameyear{
-                    position: absolute;
-                    top:48vh;
-                    left: 12px;
-
-                    #movieTxtName{
-                        font-size: 14px;
-                        color: #ffffff;
-                    }
-                    #movieYear{
-                        font-size: 12px;
-                        color: #ffffff;
-                    }
-                }
-            }
+        #alignMovieImage {
+          width: 100%;
+          height: 100%;
         }
+
+        .alignTxtMovie {
+
+          #movieTxtName {
+            font-size: 14px;
+            color: #ffffff;
+          }
+          #movieYear {
+            font-size: 12px;
+            color: #ffffff;
+          }
+        }
+      }
+
     }
   }
 

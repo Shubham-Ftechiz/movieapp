@@ -79,7 +79,7 @@ exports.createMovie = async (req, res) => {
         MoviesList.create(r)
           .then((data) => {
             res.send({
-              message: "Movie Created",
+              message: "Movie Created Successfuly",
             });
           })
           .catch((err) => {
