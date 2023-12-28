@@ -14,6 +14,10 @@ const movieRoutes = (app) => {
   router.get("/getmovie", movies.getMovie);
 
   // Edit Movie
+  router.put("/editmovie", movies.editMovie);
+
+  // Delete Movie
+  router.delete("/deletemovie", movies.deleteMovie);
 
   app.use("/api",auth, router);
 };
