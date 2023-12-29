@@ -17,7 +17,7 @@ app.use(
   })
 );
 
-app.use(express.static("public"));
+app.use(express.static("uploads"));
 
 // using bodyParser to parse JSON bodies into JS objects
 app.use(bodyParser.json());

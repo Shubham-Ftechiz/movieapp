@@ -116,11 +116,12 @@ const Dashboard = () => {
             <div></div>
           </div>
           <div className="movieListCardsMain">
+          {console.log("Checking_Data:",data)}
             {data?.map((movieInfo, index) => (
               <div class="movieListCards">
                 <img
-                  src={movieInfo.movieimage}
-                  /* src={`${BASE_URL}/uploads/${movieInfo.movieimage}`} */
+                  /* src={movieInfo.movieimage} */
+                  src={`${BASE_URL}/${movieInfo.movieimage}`}
                   alt="Your Image"
                   id="alignMovieImage"
                 />
