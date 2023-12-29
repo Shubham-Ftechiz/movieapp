@@ -7,24 +7,9 @@ import uploadIcon from "../../images/downloadicon.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import logoutImage from "../../images/logout_icon.svg";
 import { ToastContainer, toast } from "react-toastify";
+import { BASE_URL } from "../../contants";
 
 
-const getBase64 = (img, callback) => {
-  const reader = new FileReader();
-  reader.addEventListener("load", () => callback(reader.result));
-  reader.readAsDataURL(img);
-};
-const beforeUpload = (file) => {
-  const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
-  if (!isJpgOrPng) {
-    message.error("You can only upload JPG/PNG file!");
-  }
-  const isLt2M = file.size / 1024 / 1024 < 2;
-  if (!isLt2M) {
-    message.error("Image must smaller than 2MB!");
-  }
-  return isJpgOrPng && isLt2M;
-};
 const CreateEditMovie = () => {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
@@ -35,12 +20,34 @@ const CreateEditMovie = () => {
   const [title, setTitle] = useState();
   const [publishYear, setPublishYear] = useState();
 
+  const [form] = Form.useForm();
+  const [fileList, setFileList] = useState([]);
+
   const navigate = useNavigate();
   const location = useLocation();
 
   const token = localStorage.getItem("token");
 
+  const getBase64 = (img, callback) => {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => callback(reader.result));
+    reader.readAsDataURL(img);
+  };
+  const beforeUpload = (file) => {
+    setFileList([file]);
+    const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
+    if (!isJpgOrPng) {
+      message.error("You can only upload JPG/PNG file!");
+    }
+    const isLt2M = file.size / 1024 / 1024 < 2;
+    if (!isLt2M) {
+      message.error("Image must smaller than 2MB!");
+    }
+    return isJpgOrPng && isLt2M;
+  };
+
   const handleChange = (info) => {
+    console.log("Check_Uploading:",info)
     if (info.file.status === "uploading") {
       setLoading(true);
       return;
@@ -54,21 +61,22 @@ const CreateEditMovie = () => {
     }
   };
 
-  const onSubmit = async(values) => {
-    const payload = {
-      moviename:values.title,
-      publishedyear:values.publishedYear,
-      movieimage: "https://t.ly/IS-Yz"
-    }
+  const onSubmit = async (values) => {
+    const formData = new FormData();
+    formData.append('image', fileList[0]);
+    formData.append('moviename', values.title);
+    formData.append('publishedyear', values.publishedYear);
 
+
+    console.log("Check_response:", fileList[0]);
+  
     try {
-      const response = await fetch('http://localhost:5000/api/createmovie', {
+      const response = await fetch(`${BASE_URL}/api/createmovie`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json', // You may need to adjust the content type based on your API
+          'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify(payload)
+        body: formData
       });
 
       if (!response.ok) {
@@ -84,6 +92,8 @@ const CreateEditMovie = () => {
         pauseOnHover: false,
         theme: "light",
       });
+
+      console.log("resultResult55:",result)
       
       setData(result);
       
@@ -154,7 +164,8 @@ const CreateEditMovie = () => {
               showUploadList={false}
               action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
               beforeUpload={beforeUpload}
-              onChange={handleChange}>
+              onChange={handleChange}
+              fileList={fileList}>
               {imageUrl ? (
                 <img
                   src={imageUrl}

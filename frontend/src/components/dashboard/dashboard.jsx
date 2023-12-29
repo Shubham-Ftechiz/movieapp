@@ -6,6 +6,7 @@ import logoutImage from "../../images/logout_icon.svg";
 import addIcon from "../../images/add_icon.svg";
 import { DeleteOutlined } from "@ant-design/icons";
 import { ToastContainer, toast } from "react-toastify";
+import { BASE_URL } from "../../contants";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Dashboard = () => {
     // Get movie data from APIs
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/getmovie", {
+        const response = await fetch(`${BASE_URL}/api/getmovie`, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
@@ -30,6 +31,7 @@ const Dashboard = () => {
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
+        console.log("Check_response:",result)
         setData(result);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -57,7 +59,7 @@ const Dashboard = () => {
       id: id,
     };
     try {
-      const response = await fetch("http://localhost:5000/api/deletemovie", {
+      const response = await fetch(`${BASE_URL}/api/deletemovie`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -118,6 +120,7 @@ const Dashboard = () => {
               <div class="movieListCards">
                 <img
                   src={movieInfo.movieimage}
+                  /* src={`${BASE_URL}/uploads/${movieInfo.movieimage}`} */
                   alt="Your Image"
                   id="alignMovieImage"
                 />
@@ -150,12 +153,12 @@ const Dashboard = () => {
                 onClick={() => createeditmovie("addNewMovie")}>
                 Add a new movie
               </Button>
-              <Button
+              {/* <Button
                 type="primary"
                 className="edit-new-movie-button"
                 onClick={() => createeditmovie("editNewMovie")}>
                 Edit
-              </Button>
+              </Button> */}
             </div>
           </div>
         </>

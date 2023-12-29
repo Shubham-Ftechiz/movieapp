@@ -69,6 +69,11 @@ exports.login = async (req, res) => {
 exports.createMovie = async (req, res) => {
   const r = req.body;
 
+  const { filename } = req.file;
+
+  r.movieimage = filename;
+  console.log("Check_resposne1:", r);
+
   MoviesList.find({ moviename: r.moviename })
     .then((data) => {
       if (data.length > 0) {

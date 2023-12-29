@@ -11,7 +11,7 @@ const MovieSchema = new mongoose.Schema({
   },
   movieimage: {
     type: String,
-    required: true,
+    required: false,
   },
   date: {
     type: Date,
