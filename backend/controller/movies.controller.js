@@ -71,8 +71,7 @@ exports.createMovie = async (req, res) => {
 
   const { filename } = req.file;
 
-  r.movieimage = filename;
-  //r.movieimage = "https://shorturl.at/bioD4";
+  r.movieimage = filename ? filename : "https://shorturl.at/bioD4";
 
   console.log("Check_resposne1:", r);
 
