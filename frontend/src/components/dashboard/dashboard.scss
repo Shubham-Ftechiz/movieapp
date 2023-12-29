@@ -16,7 +16,7 @@
 
       .logoutTxt {
         color: #ffffff;
-        font-weight: 700;
+        font-weight: 70 0;
         font-size: 16px;
         margin-top: 4px;
         padding-right: 10px;
@@ -31,13 +31,13 @@
       justify-content: flex-start;
 
       .movieListCards {
-        width: 250px;
+        width: 245px;
         height: 360px;
-        padding: 8px 8px 55px 8px;
+        padding: 8px 8px 65px 8px;
         line-height: 3vh;
         border-radius: 12px;
         background-color: #092c39;
-        margin-right: 4vw;
+        margin-right: 2vw;
         margin-top: 2vh;
         position: relative;
 
@@ -55,6 +55,12 @@
           #movieYear {
             font-size: 12px;
             color: #ffffff;
+          }
+          .deleteIcon{
+            cursor: pointer;
+            color: red;
+            position: absolute;
+            z-index: 1;
           }
         }
       }
